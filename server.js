@@ -27,13 +27,13 @@ const userRouter = require('./api/routes/userRouter');
 
 app.use(userRouter);
 
-app.use(errorHandler)
+app.use(errorHandler);
 
-function errorHandler (err, req, res, next) {
-  console.error(err)
+function errorHandler(err, req, res, next) {
+  console.error(err);
   let newError = {
-    message: err.message,
-  }
+    message: err.message
+  };
   res.status(500).send(newError);
 }
 

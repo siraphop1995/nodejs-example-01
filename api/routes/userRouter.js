@@ -1,11 +1,11 @@
-const router = require("express").Router();
-const mongoose = require("mongoose");
-const User = mongoose.model("Users");
-const middleware = require("../utils/middleware");
+const router = require('express').Router();
+const mongoose = require('mongoose');
+const User = mongoose.model('Users');
+const middleware = require('../utils/middleware');
 
 //read all user
-app.get("/user", middleware.authen, async function(req, res, next) {
-  console.log('read all')
+app.get('/user', middleware.authen, async function(req, res, next) {
+  console.log('read all');
   try {
     const user = await User.find({}, null);
     res.json(user);
@@ -15,8 +15,8 @@ app.get("/user", middleware.authen, async function(req, res, next) {
 });
 
 //create
-app.post("/user", middleware.authen, async function(req, res, next) {
-  console.log('create')
+app.post('/user', middleware.authen, async function(req, res, next) {
+  console.log('create');
   try {
     let newUser = new User(req.body);
     const user = await newUser.save();
@@ -27,8 +27,8 @@ app.post("/user", middleware.authen, async function(req, res, next) {
 });
 
 //read one
-app.get("/user/:userId", async function(req, res, next) {
-  console.log('read one')
+app.get('/user/:userId', async function(req, res, next) {
+  console.log('read one');
   try {
     const user = await User.findById(req.params.userId);
     res.json(user);
@@ -38,8 +38,8 @@ app.get("/user/:userId", async function(req, res, next) {
 });
 
 //update
-app.post("/user/:userId", middleware.authen, async function(req, res, next) {
-  console.log('update')
+app.post('/user/:userId', middleware.authen, async function(req, res, next) {
+  console.log('update');
   try {
     let newUser = req.body;
     const user = await User.findByIdAndUpdate(req.params.userId, newUser);
@@ -50,12 +50,12 @@ app.post("/user/:userId", middleware.authen, async function(req, res, next) {
 });
 
 //delete
-app.delete("/user/:userId", middleware.authen, async function(req, res, next) {
-  console.log('delete')
+app.delete('/user/:userId', middleware.authen, async function(req, res, next) {
+  console.log('delete');
   try {
     const user = await User.findByIdAndRemove(req.params.userId);
     const response = {
-      message: "Delete user id: " + req.params.userId + " successfully",
+      message: 'Delete user id: ' + req.params.userId + ' successfully',
       id: user._id
     };
     res.json(response);

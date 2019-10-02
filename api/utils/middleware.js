@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 async function authen(req, res, next) {
-    next()
+  next();
 }
 
 module.exports = {
