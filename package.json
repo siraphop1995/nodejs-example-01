@@ -1,5 +1,5 @@
 {
-  "name": "nodejs-starter-01",
+  "name": "nodejs-example-01",
   "version": "1.0.0",
   "description": "Basic starter file for nodejs (express)",
   "main": "server.js",
