@@ -2,18 +2,11 @@
 
 A template to start using express
 
-###Feature
+## Feature
 
 1.  Simple rounting
 
 2.  Basic mongoose CURD
-
-###Installing & Running
-To install and run simply follow these steps:
-
-1.  npm install --save
-
-2.  node server.js
 
 ## Dependencies
 - [express](https://github.com/expressjs/express)
