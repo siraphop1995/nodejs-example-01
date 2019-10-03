@@ -66,3 +66,10 @@ These are example table for `README.md`
 | `Ex02` | Desc 02 | Test |
 
 > **Note:** This README.me can be use as guideline
+```javascript
+module.exports = {
+  'Example': {
+
+  }
+}
+```
