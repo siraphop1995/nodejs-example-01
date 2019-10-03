@@ -22,12 +22,14 @@
 ## Prerequisite
 Please install following softwares before start using Datana services
 
-- Docker
-Start docker mongo at port `27017`:  
+Docker mongo at port `27017`:  
 ```
 docker run -d --name mongo -p 27017:27017 mongo
 ```
-- PM2 (`npm install -g pm2`)
+PM2
+```
+npm install -g pm2
+```
 
 ## <a name="installation"></a> Installation
 
