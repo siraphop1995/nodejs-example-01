@@ -3,8 +3,9 @@
 > A template to start using express
 
 ## <a name="contents"></a> Contents
- - [Feature](#feature)
  - [Dependencies](#dependencies)
+ - [Feature](#feature)
+ - [Prerequisite](#prerequisite)
  - [Installation](#installation)
  - [Usage](#usage)
 
@@ -19,8 +20,7 @@
 
 2.  Basic mongoose CURD
 
-## Prerequisite
-Please install following softwares before start using Datana services
+## <a name="prerequisite"></a> Prerequisite
 
 Docker mongo at port `27017`:  
 ```
