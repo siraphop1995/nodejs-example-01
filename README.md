@@ -65,5 +65,5 @@ These are example table for `README.md`
 | `Ex01` | Desc 01 | Test |
 | `Ex02` | Desc 02 | Test |
 
->>>
+>>
 **Note:** This README.me can be use as guideline
