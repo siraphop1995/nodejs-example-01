@@ -67,4 +67,3 @@ These are example table for `README.md`
 
 >>>
 **Note:** This README.me can be use as guideline
->>>
