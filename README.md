@@ -7,7 +7,11 @@
  - [Dependencies](#dependencies)
  - [Installation](#installation)
  - [Usage](#usage)
- - [Error response format](#error)
+
+## <a name="dependencies"></a> Dependencies
+- [express](https://github.com/expressjs/express)
+- [mongoose](https://github.com/Automattic/mongoose)
+- [cors](https://github.com/expressjs/cors)
 
 ## <a name="feature"></a> Feature
 
@@ -15,10 +19,15 @@
 
 2.  Basic mongoose CURD
 
-## <a name="dependencies"></a> Dependencies
-- [express](https://github.com/expressjs/express)
-- [mongoose](https://github.com/Automattic/mongoose)
-- [cors](https://github.com/expressjs/cors)
+## Prerequisite
+Please install following softwares before start using Datana services
+
+- Docker
+Start docker mongo at port `27017`:  
+```
+docker run -d --name mongo -p 27017:27017 mongo
+```
+- PM2 (`npm install -g pm2`)
 
 ## <a name="installation"></a> Installation
 
@@ -26,10 +35,7 @@ Install dependencies
 ```
 npm install --save
 ```
-Start docker mongo at port `27017`:  
-```
-docker run -d --name mongo -p 27017:27017 mongo
-```
+
 Used following local setting for `.env` file:  
 ```
 PORT=3000
