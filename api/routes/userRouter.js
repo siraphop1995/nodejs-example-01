@@ -30,7 +30,7 @@ app.post('/user', middleware.authen, async function(req, res, next) {
 app.get('/user/:userId', async function(req, res, next) {
   console.log('read one');
   try {
-    const user = await User.findById(req.params.userId);
+    const user = await User.findOne({ _id: req.params.userId });
     res.json(user);
   } catch (err) {
     next(err);
@@ -42,7 +42,7 @@ app.post('/user/:userId', middleware.authen, async function(req, res, next) {
   console.log('update');
   try {
     let newUser = req.body;
-    const user = await User.findByIdAndUpdate(req.params.userId, newUser);
+    const user = await User.updateOne({ _id: req.params.userId }, newUser);
     res.json(user);
   } catch (err) {
     next(err);
@@ -53,7 +53,7 @@ app.post('/user/:userId', middleware.authen, async function(req, res, next) {
 app.delete('/user/:userId', middleware.authen, async function(req, res, next) {
   console.log('delete');
   try {
-    const user = await User.findByIdAndRemove(req.params.userId);
+    const user = await User.remove({ _id: req.params.adminId });
     const response = {
       message: 'Delete user id: ' + req.params.userId + ' successfully',
       id: user._id

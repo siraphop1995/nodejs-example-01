@@ -20,6 +20,8 @@
 
 2.  Basic mongoose CURD
 
+3.  Basic errorHandler
+
 ## <a name="prerequisite"></a> Prerequisite
 
 Docker mongo at port `27017`:  
