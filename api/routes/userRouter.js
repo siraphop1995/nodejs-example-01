@@ -53,7 +53,7 @@ app.post('/user/:userId', middleware.authen, async function(req, res, next) {
 app.delete('/user/:userId', middleware.authen, async function(req, res, next) {
   console.log('delete');
   try {
-    const user = await User.deleteOne({ _id: req.params.adminId });
+    const user = await User.deleteOne({ _id: req.params.userId });
     const response = {
       message: 'Delete user id: ' + req.params.userId + ' successfully',
       id: user._id
