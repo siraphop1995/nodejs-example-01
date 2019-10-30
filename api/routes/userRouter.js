@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const User = mongoose.model('Users');
 const { authen } = require('../utils/middleware');
 
-//read all user
+//get all users
 app.get('/getAllUsers', authen, async function(req, res, next) {
   console.log('getAllUsers');
   try {
@@ -14,7 +14,7 @@ app.get('/getAllUsers', authen, async function(req, res, next) {
   }
 });
 
-//create
+//create user
 app.post('/createUser', authen, async function(req, res, next) {
   console.log('createUser');
   try {
@@ -26,7 +26,7 @@ app.post('/createUser', authen, async function(req, res, next) {
   }
 });
 
-//read one
+//find user by id
 app.get('/findUserById/:userId', authen, async function(req, res, next) {
   console.log('findUserById');
   try {
@@ -37,7 +37,19 @@ app.get('/findUserById/:userId', authen, async function(req, res, next) {
   }
 });
 
-//update
+//find user
+app.post('/findUser', authen, async function(req, res, next) {
+  console.log('findUser');
+  try {
+    const query = req.body;
+    const user = await User.findOne(query);
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+});
+
+//update user
 app.patch('/updateUser/:userId', authen, async function(req, res, next) {
   console.log('updateUser');
   try {
@@ -49,7 +61,7 @@ app.patch('/updateUser/:userId', authen, async function(req, res, next) {
   }
 });
 
-//delete
+//delete user
 app.delete('/deleteUser/:userId', authen, async function(req, res, next) {
   console.log('deleteUser');
   try {
