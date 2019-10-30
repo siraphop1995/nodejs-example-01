@@ -22,6 +22,8 @@
 
 3.  Basic errorHandler
 
+4.  Basic middleware
+
 ## <a name="prerequisite"></a> Prerequisite
 
 Docker mongo at port `27017`:  
