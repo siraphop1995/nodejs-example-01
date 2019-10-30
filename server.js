@@ -24,19 +24,24 @@ mongoose.connect(
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(errorHandler);
 
 //Model and router
 User = require('./api/models/userListModel');
 const userRouter = require('./api/routes/userRouter');
 app.use(userRouter);
 
+//Error handler
+app.use(errorHandler);
+
 function errorHandler(err, req, res, next) {
+  console.log('errorHandler');
   console.error(err);
-  let newError = {
-    message: err.message
-  };
-  res.status(500).send(newError);
+  res.status(500).json({
+    error: {
+      code: 500,
+      message: err.message
+    }
+  });
 }
 
 //Listen port
